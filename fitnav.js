@@ -289,7 +289,9 @@
 					height = 0;
 				
 				for ( var i = 0; i < children.length; i++ ) {
-					height += children[i].offsetHeight;
+					if ( children[i].offsetParent !== null ) {
+						height += children[i].offsetHeight;
+					}
 				}
 				
 				return height;
