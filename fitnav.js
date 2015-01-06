@@ -115,7 +115,8 @@
 			this.options = {	 // Function: Close callback
 				navToggleSelector: '.fitnav__toggle',
 				navListSelector: '.fitnav__list',
-				navCollapsedClass: 'collapsed'
+				navCollapsedClass: 'collapsed',
+				bodyCollapsedClass: 'fitnav-collapsed'
 			};
 	
 			// User defined options
@@ -176,11 +177,13 @@
 			
 			collapse: function () {
 				addClass( nav, this.options.navCollapsedClass );
+				addClass( document.body, this.options.bodyCollapsedClass );
 				isCollapsed = true;
 			},
 			
 			expand: function () {
 				removeClass( nav, this.options.navCollapsedClass );
+				removeClass( document.body, this.options.bodyCollapsedClass );
 				isCollapsed = false;
 				//navList.style.height = 'auto';
 			},
